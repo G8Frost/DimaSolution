@@ -32,7 +32,11 @@ namespace TeachingAssistant
 		}
 
 		
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void button1_Click( object sender, EventArgs e )
 		{
 			String strA = textBoxA.Text;
@@ -53,6 +57,11 @@ namespace TeachingAssistant
 			}
 		}
 
+		/// <summary>
+		/// Находим факториал.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void button2_Click( object sender, EventArgs e )
 		{
 			String strF = textBoxF.Text;
