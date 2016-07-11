@@ -33,7 +33,7 @@ namespace TeachingAssistant
 
 		
 		/// <summary>
-		/// 
+		/// Решение линейных уравнений.
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
