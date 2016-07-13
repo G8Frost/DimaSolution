@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factorial", "Factorial\Fact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachingAssistant", "TeachingAssistant\TeachingAssistant.csproj", "{AA6418EC-6844-4681-BBB2-C6E6243B23FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{D53951AD-B3E2-4608-A162-EC138AB9C866}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AA6418EC-6844-4681-BBB2-C6E6243B23FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA6418EC-6844-4681-BBB2-C6E6243B23FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA6418EC-6844-4681-BBB2-C6E6243B23FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D53951AD-B3E2-4608-A162-EC138AB9C866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53951AD-B3E2-4608-A162-EC138AB9C866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53951AD-B3E2-4608-A162-EC138AB9C866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53951AD-B3E2-4608-A162-EC138AB9C866}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
