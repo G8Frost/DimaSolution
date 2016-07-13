@@ -10,6 +10,12 @@ namespace Test
 	{
 		static void Main( string[] args )
 		{
+			var Dima = new People();
+			Dima.Age = 12;
+
+			Console.WriteLine(Dima.Age);
+
+			Console.ReadLine();
 		}
 	}
 }
