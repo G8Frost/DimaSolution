@@ -76,12 +76,14 @@ namespace Test
                 }
             }
             heroes = AliveHero( heroes );
-            Console.WriteLine( "Победитель смертельного поединка " + heroes[0].Name );
+            Console.WriteLine( "Победитель смертельного поединка: " + heroes[0].Name );
         }
 
         public void TeamMatch(Hero[] red, Hero[] blue)
         {
+            
         }
+    
 
         private int AliveHeroCount( Hero[] heroes )
         {
@@ -101,6 +103,7 @@ namespace Test
         {
             return heroes.Where( h => h.HP > 0 ).ToArray();
         }
+
     }
 
 }
