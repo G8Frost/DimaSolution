@@ -43,9 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="People.cs" />
+    <Compile Include="AgiHero.cs" />
+    <Compile Include="Armor.cs" />
+    <Compile Include="Hero.cs" />
+    <Compile Include="Arena.cs" />
+    <Compile Include="IntHero.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StrHero.cs" />
+    <Compile Include="Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

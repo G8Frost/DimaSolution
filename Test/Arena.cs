@@ -6,81 +6,17 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-    class Hero
-    {
-        public Hero(string name)
-        {
-            Name = name;
-        }
-        public string Name;
-        public int Agi;
-        public int Str;
-        public int Int;
-        public int Prot;
-        public int Dmg;
-        public int HP;
-        public int MP;
-        public Weapon CurrentWeapon;
-        public Armor CurrentArmor;
-
-
-        public bool IsLive
-        {
-            get
-            {
-                return HP > 0;
-            }
-        }
-
-        public int SharedDmg
-        {
-            get
-            {
-                return Dmg + CurrentWeapon.Dmg;
-            }
-        }
-
-        public int SharedProt
-        {
-            get
-            {
-                return (((CurrentArmor.Prot + Prot)*2) + Agi*2);
-
-            }
-
-        }
-        public int Health
-        {
-            get
-            {
-                return HP + Str * 10;
-            }
-        }
-        public int Mana
-        {
-            get
-            {
-                return MP + Int * 5;
-            }
-        }
-    }
-
-	class Weapon
-	{
-		public int Dmg;
-	}
-
 	class Arena
 	{
 		public void PvP( Hero player1, Hero player2 )
 		{
 
-			if ( player1.HP < 0 )
+			if (!player1.IsLive)
 			{
 				Console.WriteLine( "Победил: " + player2.Name );
 				return;
 			}
-			if ( player2.HP < 0 )
+			if (!player2.IsLive)
 			{
 				Console.WriteLine( "Победил: " + player1.Name );
 				return;
@@ -94,9 +30,9 @@ namespace Test
 		private void Battle( Hero player1, Hero player2 )
 		{
 			if ( player1.IsLive )
-				player2.HP -= (player1.SharedDmg - player2.SharedProt);
+				player2.GetDamage( player1.SharedDmg );
 			if ( player2.IsLive )
-				player1.HP -= (player2.SharedDmg - player1.SharedProt);
+				player1.GetDamage(player2.SharedDmg);
 		}
 
 		public void DeathMatch( Hero[] heroes )
@@ -128,7 +64,7 @@ namespace Test
 
 		public void TeamMatch( Hero[] red, Hero[] blue )
 		{
-
+			Console.WriteLine("В разработке");
 		}
 
 
@@ -137,7 +73,7 @@ namespace Test
 			int Count = 0;
 			foreach ( Hero hero in heroes )
 			{
-				if ( hero.HP > 0 )
+				if ( hero.IsLive )
 				{
 					Count++;
 				}
@@ -152,9 +88,6 @@ namespace Test
 		}
 
 	}
-    class Armor
-    {
-        public int Prot;
-    }
 }
+
 
