@@ -86,7 +86,6 @@ namespace Test
 		{
 			return heroes.Where( h => h.IsLive ).ToArray();
 		}
-
 	}
 }
 

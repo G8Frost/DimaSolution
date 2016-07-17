@@ -105,7 +105,7 @@ namespace Test
 			Mage.Str = 3;
 			Mage.Int = 10;
 			Mage.Prot = 4;
-			Mage.Dmg = 120;
+			Mage.Dmg = 220;
 			Mage.MP = 500;
 			Mage.CurrentWeapon = Staff;
 			Mage.CurrentArmor = MagicGear;
@@ -123,7 +123,7 @@ namespace Test
 			Assassin.Str = 3;
 			Assassin.Int = 6;
 			Assassin.Prot = 4;
-			Assassin.Dmg = 100;
+			Assassin.Dmg = 200;
 			Assassin.MP = 300;
 			Assassin.CurrentWeapon = Daggers;
 			Assassin.CurrentArmor = ShadowGear;
@@ -141,7 +141,7 @@ namespace Test
 			Archer.Str = 2;
 			Archer.Int = 7;
 			Archer.Prot = 4;
-			Archer.Dmg = 73;
+			Archer.Dmg = 173;
 			Archer.MP = 400;
 			Archer.CurrentWeapon = Bow;
 			Archer.CurrentArmor = LightGear;
@@ -281,6 +281,20 @@ namespace Test
 			heroes[8] = Nightmare;
 			heroes[9] = Lancer;
 
+            Hero[] blueteam = new Hero[5];
+            blueteam[0] = Mage;
+            blueteam[1] = Archer;
+            blueteam[2] = Assassin;
+            blueteam[3] = Lancer;
+            blueteam[4] = Destroyer;
+
+            Hero[] redteam = new Hero[5];
+            redteam[0] = Warrior;
+            redteam[1] = DeathLord;
+            redteam[2] = Paladin;
+            redteam[3] = DemonicKnight;
+            redteam[4] = Nightmare;
+
 			#endregion
 
 			#region Выбор режима
@@ -294,7 +308,7 @@ namespace Test
 			switch ( gm )
 			{
 				case "PvP":
-					_100XRay.PvP( Nightmare, DemonicKnight );
+					_100XRay.PvP( Warrior, DemonicKnight );
 					break;
 				case "DM":
 					_100XRay.DeathMatch(heroes);
@@ -305,9 +319,15 @@ namespace Test
 			}
 
 
-			#endregion
+            #endregion
 
-			Console.ReadLine();
+            #region Выбор героя
+
+
+
+            #endregion
+
+            Console.ReadLine();
 		}
 
 	}
