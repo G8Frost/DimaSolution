@@ -6,51 +6,64 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-	class Hero
-	{
-		/// <summary>
-		/// иппшлни
-		/// </summary>
-		/// <param name="name"></param>
-		public Hero( string name )
-		{
-			Name = name;
-		}
-		public string Name;
-		public int Agi;
-		public int Str;
-		public int Int;
-		public int Prot;
-		public int Dmg;
-		public int HP;
-		public Weapon CurrentWeapon;
-		public Weapon[] Weapons;
+    class Hero
+    {
+        public Hero(string name)
+        {
+            Name = name;
+        }
+        public string Name;
+        public int Agi;
+        public int Str;
+        public int Int;
+        public int Prot;
+        public int Dmg;
+        public int HP;
+        public int MP;
+        public Weapon CurrentWeapon;
+        public Armor CurrentArmor;
 
-		public bool IsLive
-		{
-			get
-			{
-				return HP > 0;
-			}
-		}
 
-		public int SharedDmg
-		{
-			get
-			{
-				return Dmg + CurrentWeapon.Dmg;
-			}
-		}
+        public bool IsLive
+        {
+            get
+            {
+                return HP > 0;
+            }
+        }
 
-		public int SharedProt
-		{
-			get
-			{
-				return Prot*2; 
-				
-			}
-		}
-	}
+        public int SharedDmg
+        {
+            get
+            {
+                return Dmg + CurrentWeapon.Dmg;
+            }
+        }
+
+        public int SharedProt
+        {
+            get
+            {
+                return (((CurrentArmor.Prot + Prot)*2) + Agi*2);
+
+            }
+
+        }
+        public int Health
+        {
+            get
+            {
+                return HP + Str * 10;
+            }
+        }
+        public int Mana
+        {
+            get
+            {
+                return MP + Int * 5;
+            }
+        }
+    }
 
 	class Weapon
 	{
@@ -139,6 +152,9 @@ namespace Test
 		}
 
 	}
-
+    class Armor
+    {
+        public int Prot;
+    }
 }
 
