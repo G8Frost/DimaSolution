@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearEquation", "Sample1\LinearEquation.csproj", "{E57BD695-A3C3-4AED-BAFC-58BE868297E4}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeachingAssistant", "TeachingAssistant\TeachingAssistant.csproj", "{AA6418EC-6844-4681-BBB2-C6E6243B23FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{D53951AD-B3E2-4608-A162-EC138AB9C866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repeat", "Repeat\Repeat.csproj", "{4146F0FD-C200-4952-B604-56E9BCF9305E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D53951AD-B3E2-4608-A162-EC138AB9C866}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D53951AD-B3E2-4608-A162-EC138AB9C866}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D53951AD-B3E2-4608-A162-EC138AB9C866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4146F0FD-C200-4952-B604-56E9BCF9305E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4146F0FD-C200-4952-B604-56E9BCF9305E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4146F0FD-C200-4952-B604-56E9BCF9305E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4146F0FD-C200-4952-B604-56E9BCF9305E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

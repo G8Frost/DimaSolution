@@ -54,9 +54,9 @@ namespace Test
 			}
 		}
 
-		public void GetDamage(int CountDamage)
+		public void GetDamage(int countDamage)
 		{
-			HP -= CountDamage + SharedProt;
+			HP -= countDamage + SharedProt;
 		}
 	}
 }
