@@ -21,11 +21,11 @@ namespace Test
 			var Destroyer = new StrHero("Arthas" , 500);
 			var Nightmare = new StrHero("Nightmare" , 700);
 			var Lancer = new StrHero("Kai" , 500);
-			#endregion
+            #endregion
 
-			#region Оружие
+            #region Оружие
 
-			var LongSword = new Weapon();
+            var LongSword = new Weapon();
 			var Staff = new Weapon();
 			var Daggers = new Weapon();
 			var Bow = new Weapon();
@@ -299,7 +299,7 @@ namespace Test
 
 			#region Выбор режима
 
-			Console.Write( "Выберите режим(PvP,DM,TM): " );
+			Console.Write( "Выберите режим(PvP,DM,TM,Tournament): " );
 
 			String gm = Console.ReadLine();
 
@@ -316,6 +316,9 @@ namespace Test
 				case "TM":
 					_100XRay.TeamMatch(heroes, null);
 					break;
+                case "Tournament":
+                    _100XRay.Tournament(heroes);
+                    break;
 			}
 
 
