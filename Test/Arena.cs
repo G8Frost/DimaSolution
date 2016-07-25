@@ -93,65 +93,55 @@ namespace Test
             if (!heroes[0].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[0].Name);
-                Console.ReadLine();
                 return;
             }
             if (!heroes[1].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[1].Name);
-                Console.ReadLine();
                 return;
             }
             Battle(heroes[2], heroes[3]);
             if (!heroes[2].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[2].Name);
-                Console.ReadLine();
                 return;
             }
             if (!heroes[3].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[3].Name);
-                Console.ReadLine();
                 return;
             }
             Battle(heroes[4], heroes[5]);
             if (!heroes[4].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[4].Name);
-                Console.ReadLine();
                 return;
             }
             if (!heroes[5].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[5].Name);
-                Console.ReadLine();
                 return;
             }
             Battle(heroes[6], heroes[7]);
             if (!heroes[6].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[6].Name);
-                Console.ReadLine();
                 return;
             }
             if (!heroes[7].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[7].Name);
-                Console.ReadLine();
                 return;
             }
             Battle(heroes[8], heroes[9]);
             if (!heroes[8].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[8].Name);
-                Console.ReadLine();
                 return;
             }
             if (!heroes[9].IsLive)
             {
                 Console.WriteLine("Победил: " + heroes[9].Name);
-                Console.ReadLine();
                 return;
             }
             Console.ReadLine();
