@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,11 +9,18 @@ namespace Test
 {
 	class Program
 	{
+	    static Arena _100XRay;
+	    static Hero[] heroes;
+	    static Hero Warrior;
+	    static Hero Mage;
+	    private static Hero Assassin;
+	    private static Hero Archer;
 		static void Main( string[] args )
 		{
 			#region Герои
-			var Warrior = new StrHero("Dima" , 500);
-			var Mage = new IntHero("Shang Tsung" , 170);
+
+			Warrior = new StrHero("Dima" , 500);
+			Mage = new IntHero("Shang Tsung" , 170);
 			var Assassin = new AgiHero("Artem" , 250);
 			var Archer = new AgiHero("Arrow" , 225);
 			var DeathLord = new AgiHero("Darth Vader" , 400);
@@ -21,6 +29,7 @@ namespace Test
 			var Destroyer = new StrHero("Arthas" , 500);
 			var Nightmare = new StrHero("Nightmare" , 700);
 			var Lancer = new StrHero("Kai" , 500);
+
             #endregion
 
             #region Оружие
@@ -254,22 +263,23 @@ namespace Test
 			Lancer.MP = 150;
 			Lancer.CurrentWeapon = Lance;
 			Lancer.CurrentArmor = MediumGear;
-			//Console.WriteLine("Класс: Копейщик");
-			//Console.WriteLine("Осн. Хар.: Сила");
-			//Console.WriteLine(Lancer.Agi);
-			//Console.WriteLine(Lancer.Str);
-			//Console.WriteLine(Lancer.Int);
-			//Console.WriteLine(Lancer.Prot);
-			//Console.WriteLine(Lancer.Dmg);
-			//Console.WriteLine(Lancer.Health);
-			//Console.WriteLine(Lancer.Mana);
+            //Console.WriteLine("Класс: Копейщик");
+            //Console.WriteLine("Осн. Хар.: Сила");
+            //Console.WriteLine(Lancer.Agi);
+            //Console.WriteLine(Lancer.Str);
+            //Console.WriteLine(Lancer.Int);
+            //Console.WriteLine(Lancer.Prot);
+            //Console.WriteLine(Lancer.Dmg);
+            //Console.WriteLine(Lancer.Health);
+            //Console.WriteLine(Lancer.Mana);
 
-			#endregion
+            #endregion
 
-			#region Арена
-			var _100XRay = new Arena();
+            #region Арена
 
-			Hero[] heroes = new Hero[10];
+            _100XRay = new Arena();
+
+			heroes = new Hero[10];
 			heroes[0] = Warrior;
 			heroes[1] = Mage;
 			heroes[2] = Archer;
@@ -297,32 +307,7 @@ namespace Test
 
 			#endregion
 
-			#region Выбор режима
-
-			Console.Write( "Выберите режим(PvP,DM,TM,Tournament): " );
-
-			String gm = Console.ReadLine();
-
-
-
-			switch ( gm )
-			{
-				case "PvP":
-					_100XRay.PvP( Warrior, DemonicKnight );
-					break;
-				case "DM":
-					_100XRay.DeathMatch(heroes);
-					break;
-				case "TM":
-					_100XRay.TeamMatch(heroes, null);
-					break;
-                case "Tournament":
-                    _100XRay.Tournament(heroes);
-                    break;
-			}
-
-
-            #endregion
+		    SelectGM();
 
             #region Выбор героя
 
@@ -333,7 +318,45 @@ namespace Test
             Console.ReadLine();
 		}
 
-	}
+	    private static void SelectGM()
+	    {
+            #region Выбор режима
+
+            Console.Write( "Выберите режим(PvP(1),DM(2),TM(3),Tournament(4)): " );
+
+            String gm = Console.ReadLine();
+
+            
+
+            switch ( gm )
+            {
+                case "PvP":
+                case "1":
+                    _100XRay.PvP( Assassin, Archer );
+                    break;
+                case "DM":
+                case "2":
+                    _100XRay.DeathMatch( heroes );
+                    break;
+                case "TM":
+                case "3":
+                    _100XRay.TeamMatch( heroes, null );
+                    break;
+                case "Tournament":
+                case "4":
+                    _100XRay.Tournament( heroes.Take(8).ToArray());
+                    break;
+                default:
+                    Console.WriteLine( "Ошибка" );
+                    SelectGM();
+                    break;
+                    
+            }
+
+
+            #endregion
+        }
+    }
 
 
 }

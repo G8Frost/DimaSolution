@@ -10,7 +10,6 @@ namespace Test
 	{
 		public void PvP( Hero player1, Hero player2 )
 		{
-
 			if (!player1.IsLive)
 			{
 				Console.WriteLine( "Победил: " + player2.Name );
@@ -88,62 +87,73 @@ namespace Test
 		}
         public void Tournament(Hero[] heroes)
         {
-            Console.WriteLine("Первый тур");
-            Battle(heroes[0], heroes[1]);
-            if (!heroes[0].IsLive)
+            if (heroes.Length != 8)
             {
-                Console.WriteLine("Победил: " + heroes[0].Name);
+                Console.WriteLine("Недопустимое кол-во героев");
                 return;
             }
-            if (!heroes[1].IsLive)
+
+            Hero[] winner1 = new Hero[4];
+            Hero[] winner2 = new Hero[2];
+
+            Console.WriteLine("Четверть финала");
+            PvP(heroes[0], heroes[1]);
+            if (heroes[0].IsLive)
             {
-                Console.WriteLine("Победил: " + heroes[1].Name);
-                return;
+                winner1[0] = heroes[0];
             }
-            Battle(heroes[2], heroes[3]);
-            if (!heroes[2].IsLive)
+            if (heroes[1].IsLive)
             {
-                Console.WriteLine("Победил: " + heroes[2].Name);
-                return;
+                winner1[0] = heroes[1];
             }
-            if (!heroes[3].IsLive)
+            PvP(heroes[2], heroes[3]);
+            if (heroes[2].IsLive)
             {
-                Console.WriteLine("Победил: " + heroes[3].Name);
-                return;
+                winner1[1] = heroes[2];
             }
-            Battle(heroes[4], heroes[5]);
-            if (!heroes[4].IsLive)
+            if (heroes[3].IsLive)
             {
-                Console.WriteLine("Победил: " + heroes[4].Name);
-                return;
+                winner1[1] = heroes[3];
             }
-            if (!heroes[5].IsLive)
+            PvP( heroes[4], heroes[5]);
+            if (heroes[4].IsLive)
             {
-                Console.WriteLine("Победил: " + heroes[5].Name);
-                return;
+                winner1[2] = heroes[4];
             }
-            Battle(heroes[6], heroes[7]);
-            if (!heroes[6].IsLive)
+            if (heroes[5].IsLive)
             {
-                Console.WriteLine("Победил: " + heroes[6].Name);
-                return;
+                winner1[2] = heroes[5];
             }
-            if (!heroes[7].IsLive)
+            PvP( heroes[6], heroes[7]);
+            if (heroes[6].IsLive)
             {
-                Console.WriteLine("Победил: " + heroes[7].Name);
-                return;
+                winner1[3] = heroes[6];
             }
-            Battle(heroes[8], heroes[9]);
-            if (!heroes[8].IsLive)
+            if (heroes[7].IsLive)
             {
-                Console.WriteLine("Победил: " + heroes[8].Name);
-                return;
+                winner1[3] = heroes[7];
             }
-            if (!heroes[9].IsLive)
+            Console.WriteLine("Полуфинал");
+            PvP(winner1[0], winner1[1]);
+            if (winner1[0].IsLive)
             {
-                Console.WriteLine("Победил: " + heroes[9].Name);
-                return;
+                winner2[0] = winner1[0];
             }
+            if (winner1[1].IsLive)
+            {
+                winner2[0] = winner1[1];
+            }
+            PvP(winner1[2], winner1[3]);
+            if ( winner1[2].IsLive )
+            {
+                winner2[1] = winner1[2];
+            }
+            if ( winner1[3].IsLive )
+            {
+                winner2[2] = winner1[3];
+            }
+            Console.WriteLine("Финал");
+            PvP(winner2[0], winner2[1]);
             Console.ReadLine();
         }
 	}
