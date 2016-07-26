@@ -87,75 +87,40 @@ namespace Test
 		}
         public void Tournament(Hero[] heroes)
         {
-            if (heroes.Length != 8)
+	        int countHero = heroes.Length;
+
+	        int mid = countHero/2;
+
+			var x = Math.Log(countHero, 2);
+
+			if ( !(( int )x == x) )
             {
-                Console.WriteLine("Недопустимое кол-во героев" );
+                Console.WriteLine("Недопустимое кол-во героев");
                 return;
             }
 
-            Hero[] winner1 = new Hero[4];
-            Hero[] winner2 = new Hero[2];
+			Console.WriteLine( mid + " раунд" );
 
-            Console.WriteLine("Четверть финала");
-            PvP(heroes[0], heroes[1]);
-            if (heroes[0].IsLive)
-            {
-                heroes[0] = winner1[0];
-            }
-            if (heroes[1].IsLive)
-            {
-                heroes[1] = winner1[0];
-            }
-            PvP(heroes[2], heroes[3]);
-            if (heroes[2].IsLive)
-            {
-                heroes[2] = winner1[1];
-            }
-            if (heroes[3].IsLive)
-            {
-                heroes[3] = winner1[1];
-            }
-            PvP(heroes[4], heroes[5]);
-            if (heroes[4].IsLive)
-            {
-                heroes[4] = winner1[2];
-            }
-            if (heroes[5].IsLive)
-            {
-                heroes[5] = winner1[2];
-            }
-            PvP( heroes[6], heroes[7]);
-            if (heroes[6].IsLive)
-            {
-                heroes[6] = winner1[3];
-            }
-            if (heroes[7].IsLive)
-            {
-                heroes[7] = winner1[3];
-            }
-            Console.WriteLine("Полуфинал");
-            PvP(winner1[0], winner1[1]);
-            if (winner1[0].IsLive)
-            {
-                winner1[0] = winner2[0];
-            }
-            if (winner1[1].IsLive)
-            {
-                winner1[1] = winner2[0];;
-            }
-            PvP(winner1[2], winner1[3]);
-            if ( winner1[2].IsLive )
-            {
-                winner1[2] = winner2[1];
-            }
-            if ( winner1[3].IsLive )
-            {
-                winner1[3] = winner2[1];
-            }
-            Console.WriteLine("Финал");
-            PvP(winner2[0], winner2[1]);
-            Console.ReadLine();
-        }
+			Hero[] winners = new Hero[mid];
+
+	        for (int i = 0; i < mid; i++)
+	        {
+				PvP( heroes[i], heroes[mid+i] );
+				if ( heroes[i].IsLive )
+				{
+					winners[i] = heroes[i];
+				}
+				else
+				{
+					winners[i] = heroes[mid + i];
+				}
+			}
+	        if (mid != 1)
+	        {
+		        Tournament( winners );
+		        
+	        }
+		}
 	}
 }
 
