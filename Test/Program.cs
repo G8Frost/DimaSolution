@@ -332,7 +332,7 @@ namespace Test
             {
                 case "PvP":
                 case "1":
-                    _100XRay.PvP( Assassin, Archer );
+                    Arena.PvP( Assassin, Archer );
                     break;
                 case "DM":
                 case "2":
@@ -344,6 +344,7 @@ namespace Test
                     break;
                 case "Tournament":
                 case "4":
+                    SelectMode( _100XRay );
                     _100XRay.Tournament( heroes.Take(8).ToArray());
                     break;
                 default:
@@ -356,7 +357,27 @@ namespace Test
 
             #endregion
         }
-    }
+
+	    private static void SelectMode(Arena xRay)
+	    {
+            Console.Write( "Выберите режим турнира (1,2): " );
+
+            string gm = Console.ReadLine();
+	        switch (gm)
+	        {
+                case "1":
+                    _100XRay.TournamentInterface = new Turnir1();
+                    break;
+                case "2":
+                    _100XRay.TournamentInterface = new Turnir2();
+                    break;
+                default:
+                    Console.WriteLine( "Ошибка" );
+                    SelectMode( xRay );
+                    break;
+            }
+	    }
+	}
 
 
 }

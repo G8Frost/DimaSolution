@@ -1,6 +1,6 @@
 ﻿namespace Test
 {
-	class Armor
+	public class Armor
 	{
 		public int Prot;
 	}

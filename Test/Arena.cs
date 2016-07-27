@@ -8,7 +8,9 @@ namespace Test
 {
 	class Arena
 	{
-		public void PvP( Hero player1, Hero player2 )
+        public ITournament TournamentInterface { get; set; }
+
+		public static void PvP( Hero player1, Hero player2 )
 		{
 			if (!player1.IsLive)
 			{
@@ -26,7 +28,7 @@ namespace Test
 			PvP( player1, player2 );
 		}
 
-		private void Battle( Hero player1, Hero player2 )
+		private static void Battle( Hero player1, Hero player2 )
 		{
 			if ( player1.IsLive )
 				player2.GetDamage( player1.SharedDmg );
@@ -87,40 +89,10 @@ namespace Test
 		}
         public void Tournament(Hero[] heroes)
         {
-	        int countHero = heroes.Length;
+            TournamentInterface.Run(heroes);
 
-	        int mid = countHero/2;
+        }
 
-			var x = Math.Log(countHero, 2);
-
-			if ( !(( int )x == x) )
-            {
-                Console.WriteLine("Недопустимое кол-во героев");
-                return;
-            }
-
-			Console.WriteLine( mid + " раунд" );
-
-			Hero[] winners = new Hero[mid];
-
-	        for (int i = 0; i < mid; i++)
-	        {
-				PvP( heroes[i], heroes[mid+i] );
-				if ( heroes[i].IsLive )
-				{
-					winners[i] = heroes[i];
-				}
-				else
-				{
-					winners[i] = heroes[mid + i];
-				}
-			}
-	        if (mid != 1)
-	        {
-		        Tournament( winners );
-		        
-	        }
-		}
 	}
 }
 

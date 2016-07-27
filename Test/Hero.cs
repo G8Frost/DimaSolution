@@ -1,6 +1,6 @@
 namespace Test
 {
-	abstract class Hero
+	public abstract class Hero
 	{
 		public Hero(string name, int hp)
 		{
