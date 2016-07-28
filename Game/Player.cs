@@ -11,6 +11,7 @@ namespace Game
 
     {
         public int Karma = 0;
+        public int EXP = 0;
 
 
         public Player( string name, int hp ) : base( name, hp )
