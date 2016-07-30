@@ -12,6 +12,7 @@ namespace Game
         public int Dmg;
         public int Prot;
         public string Name;
+        public int Level = 1;
         public void GetDamage(int countDamage)
         {
             HP -= countDamage + Prot;

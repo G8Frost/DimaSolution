@@ -12,7 +12,7 @@ namespace Game
     {
         public int Karma = 0;
         public int EXP = 0;
-
+        public int Level = 1;
 
         public Player( string name, int hp ) : base( name, hp )
         {
@@ -22,6 +22,10 @@ namespace Game
         public override int SharedDmg
         {
             get { return Dmg + ( CurrentWeapon == null ? 0 : CurrentWeapon.Dmg ); }
+        }
+        public override int SharedProt
+        {
+            get { return Prot + (CurrentArmor == null ? 0 : CurrentArmor.Prot); }
         }
     }
 }
