@@ -12,12 +12,12 @@ namespace Game
     {
         public static void PvE(Player mainplayer, Monster monster)
         {
-            if (mainplayer.IsLive)
+            if (!mainplayer.IsLive)
             {
                 Console.WriteLine("Вы победили");
                 return;
             }
-            if (monster.IsLive)
+            if (!monster.IsLive)
             {
                 Console.WriteLine("Вы проиграли");
                 return;
@@ -45,6 +45,8 @@ namespace Game
             Peasant.MP = 0;
             var Club = new Weapon();
             Club.Dmg = 5;
+            var Pitchfork = new Weapon();
+            Pitchfork.Dmg = 7;
             var ChangedHuman = new Monster("", 30);
             ChangedHuman.Dmg = 3;
             ChangedHuman.Prot = 0;
@@ -73,7 +75,7 @@ namespace Game
                 case "1":
                     Console.WriteLine("  Немного побродив по городу, вы нашли дубину и отправились в путь.");
                     Peasant.CurrentWeapon = Club;
-                    Console.WriteLine("  Текущий урон: " + Peasant.SharedDmg);
+                    Console.WriteLine("Текущий урон: " + Peasant.SharedDmg);
                     break;
                 case "2":
                     Console.WriteLine("  Вы отправились в путь.(Не терпится?)");
@@ -155,6 +157,26 @@ namespace Game
             Peasant.EXP = Peasant.EXP + 20;
             Console.WriteLine("Вы получили 20 ед. опыта. Опыт: " + Peasant.EXP);
             Console.WriteLine("Новый квест: Услуга за услугу.");
+            Console.Write("  Вы вышли из деревни и вышли к развилке. Развилка переходит в три тропы, но путь направо закрыт магическим барьером, так что варианта только два: 1)Вперёд. 2)Налево. :");
+            String choice2 = Console.ReadLine();
+            switch (choice2)
+            {
+                case "1":
+                    Console.WriteLine("  Пройдя пару шагов, вы нашли лишь тупик в виде гор и какие-то вилы. Вилы вы взяли себе в качстве оружия.");
+                    Peasant.CurrentWeapon = Pitchfork;
+                    Console.WriteLine("Текущий урон: " + Peasant.SharedDmg);
+                    Console.WriteLine("  Вы вернулись на развилку");
+                    break;
+                case "2":
+                    Console.WriteLine("  Когда вы вышли прошли немного дальше по тропе, проход сзади закрыл магический барьер. Когда вы ринулись назад, вы поняли, что пути назад нет. Вы отправились навстречу неизвестности.");
+                    Console.WriteLine("  Когда вы шли, вы заметили, что местность резко стала меняться. Позже вы обнаружили разлом между Нирном и Тьмой. Из разлома буквально сочилась энергия Тьмы. Вы решили вернуться сюда позже. Вы пошли дальше по тропе.");
+                    Console.WriteLine("  Пройдя пару шагов, вы нашли лишь тупик в виде гор и какие-то вилы. Вилы вы взяли себе в качстве оружия.");
+                    Peasant.CurrentWeapon = Pitchfork;
+                    Console.WriteLine("Текущий урон: " + Peasant.SharedDmg);
+                    Console.WriteLine("  Вы вернулись на развилку по тропе.");
+                    break;
+            }
+            Console.WriteLine("  Браьер исчез, а вам открылся путь.");
             Console.ReadLine();
             }
         }
