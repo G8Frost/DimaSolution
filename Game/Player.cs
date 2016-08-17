@@ -14,9 +14,14 @@ namespace Game
         public int EXP = 0;
         public int Level = 1;
 
+        public List<Quest> Quests { get; set; }
+
+        public Location CurrentLocation { get; set; }
+
         public Player( string name, int hp ) : base( name, hp )
         {
             Dmg = 1;
+            Quests  = new List<Quest>();
         }
 
         public override int SharedDmg
