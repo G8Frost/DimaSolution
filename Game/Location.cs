@@ -79,8 +79,8 @@ namespace Game
         {
             Location DreamfallLocation = new Location();
 
-            DreamfallLocation.Name = "Королевство Дримфолл";
-            DreamfallLocation.Description = "";
+            DreamfallLocation.Name = "Дримфолл";
+            DreamfallLocation.Description = "Столица одноимённого королевства.";
             var Club = new Weapon();
             Club.Dmg = 5;
 
@@ -132,8 +132,8 @@ namespace Game
 
             DreamfallLocation.Quest = new Quest
             {
-                Name = "В путь!",
-                Description = "",
+                Name = "Новый квест: В путь!",
+                Description = "Ваше путешествие по Дримфолу начинается",
             };
 
             DreamfallLocation.Locations = new List<Location> { CreateEnterToDreamfalLocation() };
@@ -191,7 +191,7 @@ namespace Game
             Location PlaceWithHuman = new Location();
 
             PlaceWithHuman.Name = "Место с раненым человеком";
-            PlaceWithHuman.Description = "Здесь находится раненый человек";
+            PlaceWithHuman.Description = "";
 
 
             return PlaceWithHuman;

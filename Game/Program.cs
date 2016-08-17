@@ -98,7 +98,7 @@ namespace Game
                 }
                 else
                 {
-                    Console.WriteLine( $"вы на перепутье {location.Locations.Count} дорог." );
+                    Console.WriteLine( $"Вы на перепутье {location.Locations.Count} дорог." );
                     location.SelectLocation( Peasant );
                 }
                 Start( Peasant );

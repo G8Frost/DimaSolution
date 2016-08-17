@@ -11,7 +11,10 @@ namespace Sort
         static void Main( string[] args )
         {
             int[] Array = new[] {2, 1, 3, 0};
-            for(0 )
+            for(0)
+            {
+                if ()
+            }
         }
     }
 }
