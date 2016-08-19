@@ -60,11 +60,57 @@ namespace Game
 
     }
 
-    class Human : People
+    class Steward : People
     {
         public override void Dialogue(Player peasant)
         {
-            
+            Console.Write(
+               "  Вальтер(Сюжетный квест!): Эй! Ты ведь из Дримфолла, верно? Ах, ну да. Я староста этой деревни, Вальтер. Наши разведчики доложили, что к нам идёт кто-то из дримфола. 1)Разведчики? Как тут у вас всё серьёзно. 2)Разведчики?! Какого чёрта?! Вы следили за мной?! (Выберите ответ): " );
+            String answer4 = Console.ReadLine();
+            switch ( answer4 )
+            {
+                case "1":
+                    peasant.Karma++;
+                    Console.WriteLine(
+                        "  Вальтер(Сюжетный квест!): Хех, ещё как серьёзно. Шпионы следят в основном за демонами, однако докладывают обо всём, что видят или слышат. (Начислена положительная карма) " +
+                        peasant.Karma );
+                    break;
+                case "2":
+                    peasant.Karma--;
+                    Console.WriteLine(
+                        "  Вальтер(Сюжетный квест!): Шпионы обязаны докладывать мне обо всём, что видят. И я бы не советовал тебе хамить мне и повышать на меня голос. Ты в моей деревне, парниша. (Начислена отрицательная карма) " +
+                        peasant.Karma );
+                    break;
+            }
+            Console.WriteLine( "  Вальтер(Сюжетный квест!): Итак, что привело тебя ко мне в деревню?" );
+            Console.WriteLine(
+                "  Я хочу уничтожить главного демона. Он убил мою жену и зачем-то похитил сына, говоря про какой-то ритуал. Ты не знаешь, где их... логово?" );
+            Console.WriteLine(
+                "  Вальтер(Сюжетный квест!): Давай договоримся. Скажем, услуга за услугу. Доберись до Пещер Смерти, что в горах Орбах. Там обитает демон. Демон-Принц, если быть точнее. Он и его прихвостни уже давно досаждают нам. Именно из-за них появились шпионы. Убей его для нас, а я дам тебе наводку. Идёт? 1)Только ради семьи. Шантажист хренов. 2)Идёт. (Выберите ответ): " );
+            String answer5 = Console.ReadLine();
+            switch ( answer5 )
+            {
+                case "1":
+                    peasant.Karma--;
+                    Console.WriteLine(
+                        "  Вальтер(Сюжетный квест!): Иди уже. И что б не возвращался, пока эта тварь не сдохнет. Или пока не сдохнешь ты. (Начислена отрицательная карма) " +
+                        peasant.Karma );
+                    break;
+                case "2":
+                    peasant.Karma++;
+                    Console.WriteLine(
+                        "  Вальтер(Сюжетный квест!): Ну, в добрый путь. Удачи. Только пока не убьёшь тварь, не возвращайся. (Начислена положительная карма) " +
+                        peasant.Karma );
+                    break;
+            }
+        }
+    }
+
+    class Human : People
+    {
+        public override void Dialogue( Player peasant )
+        {
+
         }
     }
 
@@ -79,8 +125,8 @@ namespace Game
         {
             Location DreamfallLocation = new Location();
 
-            DreamfallLocation.Name = "Дримфолл";
-            DreamfallLocation.Description = "Столица одноимённого королевства.";
+            DreamfallLocation.Name = "  Локация: Дримфолл";
+            DreamfallLocation.Description = "(Столица одноимённого королевства)";
             var Club = new Weapon();
             Club.Dmg = 5;
 
@@ -97,11 +143,11 @@ namespace Game
                     case "1":
                         Console.WriteLine( "  Немного побродив по городу, вы нашли дубину и отправились в путь." );
                         player.CurrentWeapon = Club;
-                        Console.WriteLine( "Текущий урон: " + player.SharedDmg );
+                        Console.WriteLine( " Текущий урон: " + player.SharedDmg );
                         break;
                     case "2":
                         Console.WriteLine( "  Вы отправились в путь.(Не терпится?)" );
-                        Console.WriteLine( "Текущий урон: " + player.SharedDmg );
+                        Console.WriteLine( " Текущий урон: " + player.SharedDmg );
                         break;
                 }
             };
@@ -132,8 +178,8 @@ namespace Game
 
             DreamfallLocation.Quest = new Quest
             {
-                Name = "Новый квест: В путь!",
-                Description = "Ваше путешествие по Дримфолу начинается",
+                Name = "  Новый квест: В путь!",
+                Description = "(Ваше путешествие по Дримфолу начинается)",
             };
 
             DreamfallLocation.Locations = new List<Location> { CreateEnterToDreamfalLocation() };
@@ -149,7 +195,7 @@ namespace Game
         {
             Location EnterToDreamfal = new Location();
 
-            EnterToDreamfal.Name = "Вход в Дримфолл";
+            EnterToDreamfal.Name = "  Локация: Вход в Дримфолл";
             EnterToDreamfal.Description = "";
 
             var loc2 = CreateFirstBattleLocation();
@@ -177,7 +223,7 @@ namespace Game
                 }
             };
 
-            
+
 
             return EnterToDreamfal;
 
@@ -190,7 +236,7 @@ namespace Game
         {
             Location PlaceWithHuman = new Location();
 
-            PlaceWithHuman.Name = "Место с раненым человеком";
+            PlaceWithHuman.Name = "  Локация: Место с раненым человеком";
             PlaceWithHuman.Description = "";
 
 
@@ -206,15 +252,15 @@ namespace Game
 
             Location FirstBattle = new Location();
 
-            FirstBattle.Name = "Первая Битва";
-            FirstBattle.Description = "Здесь на героя нападёт монстр";
+            FirstBattle.Name = "  Локация: Место первой битвы";
+            FirstBattle.Description = "";
 
             FirstBattle.Action = player =>
             {
-                Console.WriteLine("  На пути на вас внезапно напал монстр. Защищайтесь!");
-                Program.PvE(player, ChangedHuman);
+                Console.WriteLine( "  На пути на вас внезапно напал монстр. Защищайтесь!" );
+                Program.PvE( player, ChangedHuman );
                 player.EXP = player.EXP + 10;
-                Console.WriteLine("Вы получили 10 ед. опыта. Опыт: " + player.EXP);
+                Console.WriteLine( "Вы получили 10 ед. опыта. Опыт: " + player.EXP );
             };
 
             return FirstBattle;
@@ -225,26 +271,45 @@ namespace Game
         {
             Location Divarication1 = new Location();
 
-            Divarication1.Name = "Развилка(1)";
-            Divarication1.Description = "Первая развилка";
+            Divarication1.Name = "  Локация: Развилка(1)";
+            Divarication1.Description = "";
 
             Divarication1.Action = player =>
             {
-
+                var ChangedHuman = new Monster("", 30);
+                ChangedHuman.Dmg = 3;
+                ChangedHuman.Prot = 0;
+                Console.Write( "  Вы нашли развилку. Выберите, куда пойти: 1)Налево. 2)Направо: " );
+                String choice = Console.ReadLine();
+                switch ( choice )
+                {
+                    case "1":
+                        Console.WriteLine( "  Монстр! Защищайтесь!" );
+                        Program.PvE( player, ChangedHuman );
+                        player.EXP = player.EXP + 10;
+                        Console.WriteLine( "Вы получили 10 ед. опыта. Опыт: " + player.EXP );
+                        player.Karma = player.Karma + 3;
+                        Console.WriteLine(
+                            "  После победы над монстром из кустов вышла старая женщина, со своими детьми или внуками. Отблагодарив вас, она ушла. (Начислена положительная карма) " +
+                            player.Karma );
+                        Console.WriteLine( "  Вы вернулись назад." );
+                        break;
+                    case "2":
+                        Console.WriteLine(
+                            "  Пройдя пару шагов, вы услышали странные звуки, а затем крики о помощи. Вы молниеносно метнулись на помощь кричавшему. Путь вам преградил монстр." );
+                        Program.PvE( player, ChangedHuman );
+                        player.EXP = player.EXP + 10;
+                        Console.WriteLine( "Вы получили 10 ед. опыта. Опыт: " + player.EXP );
+                        player.Karma = player.Karma + 1;
+                        Console.WriteLine(
+                            "  Крестьянка: Вы спасли нас, спасибо. Чудище успело убить моего внука. Эх, бедный Димитр. Спасибо вам ещё раз. (Начислена положительная карма) " +
+                            player.Karma );
+                        Console.WriteLine( "  Вы вернулись назад к развилке." );
+                        break;
+                }
             };
 
             return Divarication1;
-
-        }
-
-        public Location CreatePlaceWithOldWomanLocation()
-        {
-            Location PlaceWithOldWoman = new Location();
-
-            PlaceWithOldWoman.Name = "Место нападения на женщину";
-            PlaceWithOldWoman.Description = "Здесь на старуху нападёт монстр";
-
-            return PlaceWithOldWoman;
 
         }
 
@@ -252,8 +317,16 @@ namespace Game
         {
             Location Lakewood = new Location();
 
-            Lakewood.Name = "Деревня Лэйквуд";
-            Lakewood.Description = "Деревня, которая была построена, чтобы защищать Королевство от монстров. Местный староста может знать что-то о местонахождении главного демона";
+            Lakewood.Name = "  Локация: Деревня Лэйквуд";
+            Lakewood.Description = "(Деревня, которая была построена, чтобы защищать Королевство от монстров. Местный староста может знать что-то о местонахождении главного демона)";
+
+            Lakewood.Quest = new Quest
+            {
+                Name = "  Новый квест: Услуга за услугу",
+                Description = "(Староста попросил вас об услуге, а взамен пообещал помочь)"
+            };
+
+
 
             return Lakewood;
 
