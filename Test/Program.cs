@@ -13,8 +13,8 @@ namespace Test
 	    static Hero[] heroes;
 	    static Hero Warrior;
 	    static Hero Mage;
-	    private static Hero Assassin;
-	    private static Hero Archer;
+	    static Hero Assassin;
+	    static Hero Archer;
 		static void Main( string[] args )
 		{
 			#region Герои
@@ -332,7 +332,7 @@ namespace Test
             {
                 case "PvP":
                 case "1":
-                    Arena.PvP( Assassin, Archer );
+                    Arena.PvP( Warrior, Mage );
                     break;
                 case "DM":
                 case "2":
@@ -350,10 +350,10 @@ namespace Test
                 default:
                     Console.WriteLine( "Ошибка" );
                     SelectGM();
-                    break;
-                    
+                    break;  
             }
 
+            SelectGM();
 
             #endregion
         }

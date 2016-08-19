@@ -98,7 +98,6 @@ namespace Game
                 }
                 else
                 {
-                    Console.WriteLine( $"Вы на перепутье {location.Locations.Count} дорог." );
                     location.SelectLocation( Peasant );
                 }
                 Start( Peasant );
