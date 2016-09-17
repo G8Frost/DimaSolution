@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort", "Sort\Sort.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication2", "ConsoleApplication2\ConsoleApplication2.csproj", "{DFC10503-17F7-43EC-8A27-A2370F9F67A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remembers", "Remembers\Remembers.csproj", "{00ECA5B3-5CBF-4D7D-A25B-CE0EEBC4645E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraSpaces", "ExtraSpaces\ExtraSpaces.csproj", "{BDE014A4-8FD3-4E87-A8E7-4CDC521FD7A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{DFC10503-17F7-43EC-8A27-A2370F9F67A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC10503-17F7-43EC-8A27-A2370F9F67A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFC10503-17F7-43EC-8A27-A2370F9F67A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00ECA5B3-5CBF-4D7D-A25B-CE0EEBC4645E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00ECA5B3-5CBF-4D7D-A25B-CE0EEBC4645E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00ECA5B3-5CBF-4D7D-A25B-CE0EEBC4645E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00ECA5B3-5CBF-4D7D-A25B-CE0EEBC4645E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE014A4-8FD3-4E87-A8E7-4CDC521FD7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE014A4-8FD3-4E87-A8E7-4CDC521FD7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE014A4-8FD3-4E87-A8E7-4CDC521FD7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE014A4-8FD3-4E87-A8E7-4CDC521FD7A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
