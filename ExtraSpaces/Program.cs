@@ -8,9 +8,9 @@ namespace ExtraSpaces
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
-			Console.Write("Введите текст: ");
+			Console.Write("Введите текст c лишними буквами р: ");
 			String Text = Console.ReadLine();
 
 			char[] Array = Text.ToCharArray();
@@ -18,17 +18,16 @@ namespace ExtraSpaces
 			int N = Array.Length;
 			for ( int i = 0; i < N; i++ )
 			{
-				if ( Array[i] != ' ' )
+				if ( Array[i] != 'р' )
 				{
 					Result.Enqueue(Array[i]);
 				}
-				else if ( Array[i - 1] != ' ' )
+				else if ( Array[i - 1] != 'р' )
 				{
 					Result.Enqueue(Array[i]);
 				}
 			}
 			Console.WriteLine(Result.ToArray());
-
 			Console.ReadLine();
 		}
 	}
