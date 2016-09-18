@@ -10,25 +10,23 @@ namespace ExtraSpaces
 	{
 		static void Main()
 		{
-			Console.Write("Введите текст c лишними буквами р: ");
-			String Text = Console.ReadLine();
-
-			char[] Array = Text.ToCharArray();
-			Queue<char> Result = new Queue<char>();
-			int N = Array.Length;
-			for ( int i = 0; i < N; i++ )
+			Console.Write("Введите текст c лишними буквами: ");
+			String text = Console.ReadLine();
+			char[] array = text.ToCharArray();
+			Queue<char> result = new Queue<char>();
+			int N = array.Length;
+			result.Enqueue(array[0]);
+			for (int i = 1; i < N; i++)
 			{
-				if ( Array[i] != 'р' )
+				if (array[i] != array[i - 1])
 				{
-					Result.Enqueue(Array[i]);
+					result.Enqueue(array[i]);
 				}
-				else if ( Array[i - 1] != 'р' )
-				{
-					Result.Enqueue(Array[i]);
-				}
+				
 			}
-			Console.WriteLine(Result.ToArray());
+			Console.WriteLine(result.ToArray());
 			Console.ReadLine();
+			Main();
 		}
 	}
 }

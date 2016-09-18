@@ -62,7 +62,7 @@ namespace Sort
 			//Thread.Sleep(1);
 			Console.BackgroundColor = ( ConsoleColor )rand.Next(0, 15);
 			Console.ForegroundColor = ( ConsoleColor )rand.Next(0, 15);
-			Console.Write(".");
+			Console.Write(' ');
 			Task.Factory.StartNew(artem);
 		}
 
