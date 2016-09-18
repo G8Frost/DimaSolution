@@ -38,10 +38,6 @@ namespace Sort
 
         static void BubbleSort( int[] Array )
         {
-
-
-
-            Console.WriteLine();
             for ( int j = Array.Length - 1; j > 0; j-- )
             {
                 for ( int i = 0; i < j; i++ )
@@ -52,11 +48,9 @@ namespace Sort
                     }
                 }
             }
-
-
         }
 
-        private static void SwapElement( int[] Array, int i1, int i2 )
+        static void SwapElement( int[] Array, int i1, int i2 )
         {
             int a = Array[i1];
             Array[i1] = Array[i2];
@@ -73,7 +67,6 @@ namespace Sort
 
         static void ShakerSort( int[] Array2 )
         {
-
             int Left = 0;
             int Right = Array2.Length - 1;
             while ( Left < Right )
@@ -95,7 +88,6 @@ namespace Sort
                 }
                 Left++;
             }
-
         }
 
         static void Find(int[] Array)
@@ -109,11 +101,9 @@ namespace Sort
                 {
                     Console.WriteLine("Индекс числа: " + (i+1));
                     return;
-                }
-                
+                }              
             }
             Console.WriteLine("Такого числа нет");
         }
-
     }
 }
