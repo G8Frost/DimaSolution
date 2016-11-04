@@ -36,12 +36,15 @@
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.Graphic = new System.Windows.Forms.PictureBox();
+			this.label4 = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.Graphic)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(212, 9);
+			this.label9.Location = new System.Drawing.Point(33, 13);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(59, 13);
 			this.label9.TabIndex = 0;
@@ -107,10 +110,30 @@
 			this.textBox3.Size = new System.Drawing.Size(100, 20);
 			this.textBox3.TabIndex = 7;
 			// 
+			// Graphic
+			// 
+			this.Graphic.Location = new System.Drawing.Point(184, 36);
+			this.Graphic.Name = "Graphic";
+			this.Graphic.Size = new System.Drawing.Size(294, 307);
+			this.Graphic.TabIndex = 8;
+			this.Graphic.TabStop = false;
+			
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(302, 12);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(53, 13);
+			this.label4.TabIndex = 9;
+			this.label4.Text = "y = ax + c";
+			// 
 			// Equation
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.Graphic);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.textBox1);
@@ -121,6 +144,7 @@
 			this.Controls.Add(this.label9);
 			this.Name = "Equation";
 			this.Size = new System.Drawing.Size(502, 408);
+			((System.ComponentModel.ISupportInitialize)(this.Graphic)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -136,5 +160,7 @@
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.PictureBox Graphic;
+		private System.Windows.Forms.Label label4;
 	}
 }
