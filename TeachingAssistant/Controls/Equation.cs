@@ -59,19 +59,24 @@ namespace TeachingAssistant
 			// находим первую точку
 			int x1 = halfX - 100 ;
 			int y1 = (int)(a *x1-c);
-
+			// находим вторую точку
 			int x2 = halfX+ 100;
 			int y2 =(int) (a * x2 - c);
 
+			// рисуем крайние точки
 			drawPoint(x1, y1);
 			drawPoint(x2, y2);
 
+			// рисуем линию между двумя точками
 			drawLine(x1,y1,x2,y2);
 
+			// рисуем ось x
 			drawLine(halfX -100, halfY, halfX + 100, halfY);
 
+			// рисуем ось y
 			drawLine(halfX, halfY -100, halfX, halfY + 100);
 
+			// добавляем текст х и у
 			DrawText("x", halfX+ 100, halfY);
 			DrawText("y", halfX, halfY - 100);
 
@@ -82,6 +87,12 @@ namespace TeachingAssistant
 
 			
 		}
+
+		/// <summary>
+		/// Метод рисования точки
+		/// </summary>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
 		public void drawPoint(int x, int y)
 		{
 			Graphics g = Graphics.FromHwnd(Graphic.Handle);
@@ -95,6 +106,12 @@ namespace TeachingAssistant
 			g.Dispose();
 		}
 
+		/// <summary>
+		/// метод рисования текста
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
 		public void DrawText(string text, int x, int y)
 		{
 			Graphics g = Graphics.FromHwnd(Graphic.Handle);
@@ -105,7 +122,13 @@ namespace TeachingAssistant
 			g.Dispose();
 		}
 
-
+		/// <summary>
+		/// метод рисования линии
+		/// </summary>
+		/// <param name="x1"></param>
+		/// <param name="y1"></param>
+		/// <param name="x2"></param>
+		/// <param name="y2"></param>
 		public void drawLine(int x1, int y1, int x2, int y2)
 		{
 			Graphics g = Graphics.FromHwnd(Graphic.Handle);
