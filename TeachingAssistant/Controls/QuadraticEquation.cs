@@ -30,18 +30,23 @@ namespace TeachingAssistant
 			Double a = Convert.ToDouble(strA);
 			Double b = Convert.ToDouble(strB);
 			Double c = Convert.ToDouble(strC);
+			// D - Дискриминант
 			Double D = b * b - 4 * a * c;
+			// Если дикскриминант больше нуля, то корней два.
 			if (D > 0)
 			{
-				Double X1 = (-b + Math.Sqrt(b * b - 4 * a * c)) / 2 * a;
-				Double X2 = (-b - Math.Sqrt(b * b - 4 * a * c)) / 2 * a;
+				// Math.Sqrt - нахождение квадратного корня
+				Double X1 = (-b + Math.Sqrt(b * b - 4 * a * c)) / (2 * a);
+				Double X2 = (-b - Math.Sqrt(b * b - 4 * a * c)) / (2 * a);
 				MessageBox.Show("X1= " + X1 + " ; X2= " + X2);
 			}
+			// Если дискриминант равен нулю, то корень один
 			if (D == 0)
 			{
-				Double X1 = (-b / 2 * a);
+				Double X1 = (-b / (2 * a));
 				MessageBox.Show("X1= X2= " + X1);
 			}
+			// Если дискриминант меньше нуля, то корней нет
 			if (D < 0)
 			{
 				MessageBox.Show("Корней нет");

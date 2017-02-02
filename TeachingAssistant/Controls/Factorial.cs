@@ -25,6 +25,7 @@ namespace TeachingAssistant
 		private void button2_Click(object sender, EventArgs e)
 		{
 			String strF = textBoxF.Text;
+			// Конвентирую строку в число
 			int F = Convert.ToInt32(strF);
 			int Result = 1;
 			for (int i = 2; i <= F; i++)

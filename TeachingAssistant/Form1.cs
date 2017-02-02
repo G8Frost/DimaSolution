@@ -17,6 +17,11 @@ namespace TeachingAssistant
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// После выбора элемента в дереве навигации происходит событие
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void treeView1_AfterSelect( object sender, TreeViewEventArgs e )
 		{
 			if (e.Node.Name == "SimpleEquation")

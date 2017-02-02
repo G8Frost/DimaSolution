@@ -15,29 +15,16 @@ namespace TeachingAssistant
 		public Equation()
 		{
 			InitializeComponent();
-
-			
-		}
-
-		private void label9_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label2_Click(object sender, EventArgs e)
-		{
-
 		}
 
 		private void button4_Click(object sender, EventArgs e)
 		{
 
-			
-
 			String strA = textBox1.Text;
 			String strB = textBox2.Text;
 			String strC = textBox3.Text;
 
+			// Проверка пустоты строк
 			if (string.IsNullOrWhiteSpace(strA) || string.IsNullOrWhiteSpace(strB) || string.IsNullOrWhiteSpace(strC))
 			{
 				MessageBox.Show("Введите a, b, c");
@@ -50,18 +37,38 @@ namespace TeachingAssistant
 			MessageBox.Show("Если х = 0, то y= " + (-c / b));
 			MessageBox.Show("Если у = 0, то x= " + (-c/a));
 
-			DrawGraphic();
+			// Рисуем график.
+			DrawGraphic(a,c);
 		}
 
-		private void DrawGraphic()
+		/// <summary>
+		/// Метод рисования графика.
+		/// </summary>
+		/// <param name="a"></param>
+		/// <param name="c"></param>
+		private void DrawGraphic(double a,double c)
 		{
+			// Чистим поверхность для рисования.
+			Graphics g = Graphics.FromHwnd(Graphic.Handle);
+			g.Clear(Color.White);
+
+			// Находим центр поверхности для рисования.
 			var halfX = Graphic.ClientRectangle.Width / 2;
 			var halfY = Graphic.ClientRectangle.Height / 2;
 
-			
-			drawLine(halfX + -100, halfY, halfX + 100, halfY);
+			// находим первую точку
+			int x1 = halfX - 100 ;
+			int y1 = (int)(a *x1-c);
 
+			int x2 = halfX+ 100;
+			int y2 =(int) (a * x2 - c);
 
+			drawPoint(x1, y1);
+			drawPoint(x2, y2);
+
+			drawLine(x1,y1,x2,y2);
+
+			drawLine(halfX -100, halfY, halfX + 100, halfY);
 
 			drawLine(halfX, halfY -100, halfX, halfY + 100);
 
@@ -69,12 +76,9 @@ namespace TeachingAssistant
 			DrawText("y", halfX, halfY - 100);
 
 
-			var offsetX = 0;
-			var offsetY = 0;
-
-
-
-			drawPoint(halfX + offsetX, halfY + offsetY);
+			//var offsetX = 0;
+			//var offsetY = 0;
+			//drawPoint(halfX + offsetX, halfY + offsetY);
 
 			
 		}

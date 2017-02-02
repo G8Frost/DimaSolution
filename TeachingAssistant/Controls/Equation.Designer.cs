@@ -49,7 +49,6 @@
 			this.label9.Size = new System.Drawing.Size(59, 13);
 			this.label9.TabIndex = 0;
 			this.label9.Text = "ax+by+c=0";
-			this.label9.Click += new System.EventHandler(this.label9_Click);
 			// 
 			// button4
 			// 
@@ -78,7 +77,6 @@
 			this.label2.Size = new System.Drawing.Size(58, 13);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Введите b";
-			this.label2.Click += new System.EventHandler(this.label2_Click);
 			// 
 			// label3
 			// 
@@ -114,10 +112,9 @@
 			// 
 			this.Graphic.Location = new System.Drawing.Point(184, 36);
 			this.Graphic.Name = "Graphic";
-			this.Graphic.Size = new System.Drawing.Size(294, 307);
+			this.Graphic.Size = new System.Drawing.Size(300, 300);
 			this.Graphic.TabIndex = 8;
 			this.Graphic.TabStop = false;
-			
 			// 
 			// label4
 			// 
